@@ -1,5 +1,6 @@
 package br.com.e2dp.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import br.com.e2dp.domain.Funcionario;
@@ -15,4 +16,10 @@ public interface FuncionarioService {
     Funcionario buscarPorId(Long id);
 
     List<Funcionario> buscarTodos();
+
+	Object buscarPorNome(String nome);
+
+	Object buscarPorCargo(Long id);
+
+	Object buscarPorDatas(LocalDate entrada, LocalDate saida);
 }
