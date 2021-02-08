@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.e2dp.domain.AbstractDao;
 import br.com.e2dp.domain.model.Funcionario;
 
 @Repository

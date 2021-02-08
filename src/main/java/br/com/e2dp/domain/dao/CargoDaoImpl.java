@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.e2dp.domain.AbstractDao;
 import br.com.e2dp.domain.model.Cargo;
 import br.com.e2dp.web.util.PaginacaoUtil;
 
