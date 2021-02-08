@@ -40,7 +40,9 @@ public class CargoController {
 	@GetMapping("/listar")
 	public String listar(ModelMap model, @RequestParam("page") Optional<Integer> page) {
 		int paginaAtual = page.orElse(1);
+		
 		PaginacaoUtil<Cargo>pageCargo = cargoService.buscarPorPagina(paginaAtual);
+		
 		model.addAttribute("pageCargo", pageCargo);
 		return "cargo/lista";
 	}

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import br.com.e2dp.domain.model.Funcionario;
+import br.com.e2dp.web.util.PaginacaoUtil;
 
 public interface FuncionarioDao {
     
@@ -26,4 +27,6 @@ public interface FuncionarioDao {
 	List<Funcionario> findByDataEntrada(LocalDate entrada);
 
 	List<Funcionario> findByDataSaida(LocalDate saida);
+	
+	PaginacaoUtil<Funcionario> buscaPaginada(int pagina);
 }

@@ -60,14 +60,24 @@
 
 				<nav aria-label="Navegação de página exemplo">
 					<ul class="pagination justify-content-center">
+						
+						<li class="page-item">
+							<a class="page-link" th:href="@{/cargos/listar(page=${1})}" >First</a>
+						</li>
+							
+						
 						<li th:class="${pageCargo.pagina == 1 } ? 'page-item disabled' : 'page-item'">
 							<a class="page-link" th:href="@{/cargos/listar(page=${pageCargo.pagina - 1})}" >Prev</a>
 						</li>
+						
 						<li class="page-item">
 							<span class="page-link" th:text="|${pageCargo.pagina} de ${pageCargo.totalDePaginas}|" />
 						</li>
 							<li th:class="${pageCargo.pagina == pageCargo.totalDePaginas } ? 'page-item disabled' : 'page-item'">
 							  <a class="page-link" th:href="@{/cargos/listar(page=${pageCargo.pagina + 1})}" >Next</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" th:href="@{/cargos/listar(page=${pageCargo.totalDePaginas})}" >Last</a>
 						</li>
 					</ul>
 				</nav>

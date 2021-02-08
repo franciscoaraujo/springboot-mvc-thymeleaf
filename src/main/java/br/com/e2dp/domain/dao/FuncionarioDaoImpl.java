@@ -6,19 +6,19 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import br.com.e2dp.domain.AbstractDao;
+import br.com.e2dp.domain.model.Departamento;
 import br.com.e2dp.domain.model.Funcionario;
+import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Repository
 public class FuncionarioDaoImpl extends AbstractDao<Funcionario, Long> implements FuncionarioDao {
 
 	public List<Funcionario> findByNome(String nome) {
-
 		return createQuery("select f from Funcionario f where f.nome like concat('%',?1,'%') ", nome);
 	}
 
 	@Override
 	public List<Funcionario> findByCargoId(Long id) {
-
 		return createQuery("select f from Funcionario f where f.cargo.id = ?1", id);
 	}
 
@@ -43,4 +43,23 @@ public class FuncionarioDaoImpl extends AbstractDao<Funcionario, Long> implement
 				.append("order by f.dataEntrada asc").toString();
 		return createQuery(jpql, saida);
 	}
+
+	@Override
+	public PaginacaoUtil<Funcionario> buscaPaginada(int pagina) {
+		
+		int tamanho = 5;
+		int inicio = (pagina - 1) * tamanho;
+		List<Funcionario> funcionarios = getEntityManager().createQuery("select f from Funcionario f order by f.nome asc", Funcionario.class)
+				.setFirstResult(inicio)// recebe o numero do primeiro registro
+				.setMaxResults(tamanho).getResultList();
+		long totalRegistros = count();
+		long totalDePaginas = (totalRegistros + (tamanho - 1)) / tamanho;
+		
+		return new PaginacaoUtil<>(tamanho, pagina, totalDePaginas, funcionarios);
+	}
+	
+	private long count() {
+		return getEntityManager().createQuery("select count(*) from Funcionario", Long.class).getSingleResult();
+	}
+
 }

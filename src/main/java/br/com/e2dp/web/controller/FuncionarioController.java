@@ -2,6 +2,7 @@ package br.com.e2dp.web.controller;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.e2dp.domain.model.Cargo;
@@ -25,6 +27,7 @@ import br.com.e2dp.domain.model.Funcionario;
 import br.com.e2dp.domain.model.UF;
 import br.com.e2dp.web.service.CargoService;
 import br.com.e2dp.web.service.FuncionarioService;
+import br.com.e2dp.web.util.PaginacaoUtil;
 import br.com.e2dp.web.validator.FuncionarioValidator;
 
 @Controller
@@ -47,14 +50,21 @@ public class FuncionarioController {
 	}
 	
 	@GetMapping("/listar")
-	public String listar(ModelMap model) {
-		model.addAttribute("funcionarios", funcionarioService.buscarTodos());
-		return "/funcionario/lista"; 
+	public ModelAndView  listar(ModelMap model, @RequestParam("page") Optional<Integer> page) {
+		int paginaAtual = page.orElse(1);
+		PaginacaoUtil<Funcionario>pageFuncionarios = funcionarioService.buscaPorPagina(paginaAtual);
+//		/*Ajustar a paginacao*/
+//		
+		model.addAttribute("pageFuncionarios", funcionarioService.buscarTodos());
+		
+		//model.addAttribute("pageFuncionarios", pageFuncionarios);
+		
+		return new ModelAndView("funcionario/lista", model);
+		//return "funcionario/lista"; 
 	}
 	
 	@PostMapping("/salvar")
 	public String salvar(@Valid Funcionario funcionario, BindingResult result, RedirectAttributes attr) {
-		
 		if (result.hasErrors()) {
 			return "/funcionario/cadastro";
 		}
