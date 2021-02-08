@@ -47,7 +47,7 @@ public class DepartamentoController {
 	public String salvar(@Valid  Departamento departamento,BindingResult result ,RedirectAttributes attr) {
 		/*tem que tratar o cadastro de nomes nome de departamento*/
 		if(result.hasErrors()) {
-			return "/departamento/cadastro";
+			return "departamento/cadastro";
 		}
 		service.salvar(departamento);
 		
@@ -58,17 +58,17 @@ public class DepartamentoController {
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id") Long id, ModelMap model) {
 		model.addAttribute("departamento", service.buscarPorId(id));
-		return "/departamento/cadastro";
+		return "departamento/cadastro";
 	}
 	
 	@PostMapping("/editar")
 	public String editar(@Valid Departamento departamento, BindingResult result ,RedirectAttributes attr) {
 		if(result.hasErrors()) {
-			return "/departamento/cadastro";
+			return "departamento/cadastro";
 		}
 		service.editar(departamento);
 		attr.addFlashAttribute("success","Departamento editado com sucesso");
-		return "redirect:/departamentos/cadastrar";
+		return "redirect: departamentos/cadastrar";
 	}
 	
 	@GetMapping("/excluir/{id}")// estou usandoo ModelMap porque nao estou usando o redirect

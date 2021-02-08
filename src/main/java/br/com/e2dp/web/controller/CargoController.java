@@ -34,7 +34,7 @@ public class CargoController {
 
 	@GetMapping("/cadastrar")
 	public String cadastrar(Cargo cargo) {
-		return "/cargo/cadastro";
+		return "cargo/cadastro";
 	}
 
 	@GetMapping("/listar")
@@ -52,7 +52,7 @@ public class CargoController {
 	@PostMapping("/salvar")
 	public String salvar(@Valid Cargo cargo, BindingResult result, RedirectAttributes attr) {
 		if (result.hasErrors()) {
-			return "/cargo/cadastro";
+			return "cargo/cadastro";
 		}
 		cargoService.salvar(cargo);
 		attr.addFlashAttribute("success", "Cargo inserido com sucesso.");
@@ -83,7 +83,7 @@ public class CargoController {
 			cargoService.excluir(id);
 			attr.addFlashAttribute("success", "Cargo excluido com sucesso.");
 		}
-		return "redirect:/cargos/listar";
+		return "redirect:cargos/listar";
 	}
 
 	@ModelAttribute("departamentos")

@@ -86,9 +86,11 @@
 						<li class="page-item">
 							<span class="page-link" th:text="|${pageCargo.pagina} de ${pageCargo.totalDePaginas}|" />
 						</li>
-							<li th:class="${pageCargo.pagina == pageCargo.totalDePaginas } ? 'page-item disabled' : 'page-item'">
+						
+						<li th:class="${pageCargo.pagina == pageCargo.totalDePaginas } ? 'page-item disabled' : 'page-item'">
 							  <a class="page-link" th:href="@{/cargos/listar(page=${pageCargo.pagina + 1})}" >Next</a>
 						</li>
+						
 						<li class="page-item">
 							<a class="page-link" th:href="@{/cargos/listar(page=${pageCargo.totalDePaginas})}" >Last</a>
 						</li>

@@ -46,12 +46,13 @@ public class FuncionarioDaoImpl extends AbstractDao<Funcionario, Long> implement
 
 	@Override
 	public PaginacaoUtil<Funcionario> buscaPaginada(int pagina, String direcao) {
-		
 		int tamanho = 5;
 		int inicio = (pagina - 1) * tamanho;
+		
 		List<Funcionario> funcionarios = getEntityManager().createQuery("select f from Funcionario f order by f.nome "+direcao, Funcionario.class)
 				.setFirstResult(inicio)// recebe o numero do primeiro registro
 				.setMaxResults(tamanho).getResultList();
+		
 		long totalRegistros = count();
 		long totalDePaginas = (totalRegistros + (tamanho - 1)) / tamanho;
 		
