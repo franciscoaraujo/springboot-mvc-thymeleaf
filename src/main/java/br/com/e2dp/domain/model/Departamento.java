@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import br.com.e2dp.domain.AbstractEntity;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "DEPARTAMENTOS")

@@ -12,6 +12,8 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
+import br.com.e2dp.domain.AbstractEntity;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "FUNCIONARIOS")

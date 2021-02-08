@@ -1,4 +1,4 @@
-package br.com.e2dp.domain.model;
+package br.com.e2dp.domain;
 
 import java.io.Serializable;
 

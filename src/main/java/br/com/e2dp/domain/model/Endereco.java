@@ -3,6 +3,8 @@ package br.com.e2dp.domain.model;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import br.com.e2dp.domain.AbstractEntity;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "ENDERECOS")
