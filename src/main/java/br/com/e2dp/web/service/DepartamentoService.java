@@ -21,7 +21,7 @@ public interface DepartamentoService {
 
 	boolean departamentoJaCadastrado(String nome);
 	
-	PaginacaoUtil<Departamento> buscaPorPagina(int pagina);
+	PaginacaoUtil<Departamento> buscaPorPagina(int pagina, String direcao);
 	
 
 }

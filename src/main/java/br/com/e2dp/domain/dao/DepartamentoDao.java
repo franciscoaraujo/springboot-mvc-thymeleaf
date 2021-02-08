@@ -17,5 +17,5 @@ public interface DepartamentoDao {
     
     List<Departamento> findAll();
     
-    PaginacaoUtil<Departamento> buscaPaginada(int pagina);
+    PaginacaoUtil<Departamento> buscaPaginada(int pagina, String direcao);
 }

@@ -32,10 +32,12 @@ public class DepartamentoController {
 	}
 	
 	@GetMapping("/listar")
-	public String listar(ModelMap model,  @RequestParam("page") Optional<Integer> page) {
+	public String listar(ModelMap model,  @RequestParam("page") Optional<Integer> page,
+										  @RequestParam("dir") Optional<String> dir) {
 		int paginaAtual = page.orElse(1);
+		String ordem = dir.orElse("asc");
 		
-		PaginacaoUtil<Departamento>pageDepartamento = service.buscaPorPagina(paginaAtual);
+		PaginacaoUtil<Departamento>pageDepartamento = service.buscaPorPagina(paginaAtual, ordem);
 		
 		model.addAttribute("pageDepartamento", pageDepartamento);
 		return "departamento/lista";

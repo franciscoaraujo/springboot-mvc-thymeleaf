@@ -50,9 +50,12 @@ public class FuncionarioController {
 	}
 	
 	@GetMapping("/listar")
-	public ModelAndView  listar(ModelMap model, @RequestParam("page") Optional<Integer> page) {
+	public ModelAndView  listar(ModelMap model, @RequestParam("page") Optional<Integer> page,
+			 									@RequestParam("dir") Optional<String> dir) {
 		int paginaAtual = page.orElse(1);
-		PaginacaoUtil<Funcionario>pageFuncionarios = funcionarioService.buscaPorPagina(paginaAtual);
+		String ordem = dir.orElse("asc");
+		
+		PaginacaoUtil<Funcionario>pageFuncionarios = funcionarioService.buscaPorPagina(paginaAtual, ordem);
 //		/*Ajustar a paginacao*/
 //		
 		model.addAttribute("pageFuncionarios", funcionarioService.buscarTodos());

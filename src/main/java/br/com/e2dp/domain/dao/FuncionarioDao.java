@@ -28,5 +28,6 @@ public interface FuncionarioDao {
 
 	List<Funcionario> findByDataSaida(LocalDate saida);
 	
-	PaginacaoUtil<Funcionario> buscaPaginada(int pagina);
+	PaginacaoUtil<Funcionario> buscaPaginada(int pagina, String direcao);
+	
 }

@@ -75,8 +75,8 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     }
 
 	@Override
-	public PaginacaoUtil<Funcionario> buscaPorPagina(int pagina) {
-		return dao.buscaPaginada(pagina);
+	public PaginacaoUtil<Funcionario> buscaPorPagina(int pagina, String direcao) {
+		return dao.buscaPaginada(pagina, direcao);
 	}
 
 }

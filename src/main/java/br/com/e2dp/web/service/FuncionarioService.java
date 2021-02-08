@@ -24,5 +24,5 @@ public interface FuncionarioService {
 
 	Object buscarPorDatas(LocalDate entrada, LocalDate saida);
 	
-	PaginacaoUtil<Funcionario> buscaPorPagina(int pagina);
+	PaginacaoUtil<Funcionario> buscaPorPagina(int pagina, String direcao);
 }

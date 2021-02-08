@@ -11,19 +11,19 @@ import br.com.e2dp.web.util.PaginacaoUtil;
 @Repository
 public class DepartamentoDaoImpl extends AbstractDao<Departamento, Long> implements DepartamentoDao {
 
-	public PaginacaoUtil<Departamento> buscaPaginada(int pagina) {
+	public PaginacaoUtil<Departamento> buscaPaginada(int pagina, String direcao) {
 		
 		int tamanho = 5;
 		int inicio = (pagina - 1) * tamanho;
 
-		List<Departamento> departamentos = getEntityManager().createQuery("select d from Departamento d order by d.nome asc", Departamento.class)
+		List<Departamento> departamentos = getEntityManager().createQuery("select d from Departamento d order by d.nome "+direcao, Departamento.class)
 				.setFirstResult(inicio)// recebe o numero do primeiro registro
 				.setMaxResults(tamanho).getResultList();
 		
 		long totalRegistros = count();
 		long totalDePaginas = (totalRegistros + (tamanho - 1)) / tamanho;
 		
-		return new PaginacaoUtil<>(tamanho, pagina, totalDePaginas, departamentos);
+		return new PaginacaoUtil<>(tamanho, pagina, totalDePaginas,direcao ,departamentos);
 	}
 
 	private long count() {
