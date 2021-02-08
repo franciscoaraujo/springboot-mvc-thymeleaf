@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.e2dp.dao.CargoDao;
-import br.com.e2dp.domain.Cargo;
+import br.com.e2dp.domain.dao.CargoDao;
+import br.com.e2dp.domain.model.Cargo;
 import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Service @Transactional(readOnly = false)

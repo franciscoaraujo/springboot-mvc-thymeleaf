@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import br.com.e2dp.domain.Funcionario;
+import br.com.e2dp.domain.model.Funcionario;
 
 public class FuncionarioValidator implements Validator {
 

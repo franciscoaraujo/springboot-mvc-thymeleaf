@@ -1,8 +1,8 @@
-package br.com.e2dp.dao;
+package br.com.e2dp.domain.dao;
 
 import java.util.List;
 
-import br.com.e2dp.domain.Cargo;
+import br.com.e2dp.domain.model.Cargo;
 import br.com.e2dp.web.util.PaginacaoUtil;
 
 public interface CargoDao {

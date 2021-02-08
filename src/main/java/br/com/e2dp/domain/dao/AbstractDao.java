@@ -1,4 +1,4 @@
-package br.com.e2dp.dao;
+package br.com.e2dp.domain.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

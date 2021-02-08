@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import br.com.e2dp.domain.Departamento;
+import br.com.e2dp.domain.model.Departamento;
 import br.com.e2dp.web.service.DepartamentoService;
 
 @Component

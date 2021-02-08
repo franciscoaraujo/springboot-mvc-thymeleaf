@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.e2dp.dao.DepartamentoDao;
-import br.com.e2dp.domain.Departamento;
+import br.com.e2dp.domain.dao.DepartamentoDao;
+import br.com.e2dp.domain.model.Departamento;
 import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Service

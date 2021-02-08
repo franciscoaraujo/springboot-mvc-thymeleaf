@@ -1,10 +1,10 @@
-package br.com.e2dp.dao;
+package br.com.e2dp.domain.dao;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.e2dp.domain.Departamento;
+import br.com.e2dp.domain.model.Departamento;
 import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Repository

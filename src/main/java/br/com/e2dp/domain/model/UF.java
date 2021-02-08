@@ -1,4 +1,4 @@
-package br.com.e2dp.domain;
+package br.com.e2dp.domain.model;
 
 public enum UF {
 

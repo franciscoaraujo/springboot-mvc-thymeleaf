@@ -1,4 +1,4 @@
-package br.com.e2dp.domain;
+package br.com.e2dp.domain.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;

@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.e2dp.dao.FuncionarioDao;
-import br.com.e2dp.domain.Funcionario;
+import br.com.e2dp.domain.dao.FuncionarioDao;
+import br.com.e2dp.domain.model.Funcionario;
 
 @Service
 @Transactional(readOnly = true)

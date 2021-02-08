@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.com.e2dp.domain.Cargo;
-import br.com.e2dp.domain.Funcionario;
-import br.com.e2dp.domain.UF;
+import br.com.e2dp.domain.model.Cargo;
+import br.com.e2dp.domain.model.Funcionario;
+import br.com.e2dp.domain.model.UF;
 import br.com.e2dp.web.service.CargoService;
 import br.com.e2dp.web.service.FuncionarioService;
 import br.com.e2dp.web.validator.FuncionarioValidator;

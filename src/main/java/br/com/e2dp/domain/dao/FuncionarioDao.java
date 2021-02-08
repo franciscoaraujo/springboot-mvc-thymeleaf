@@ -1,9 +1,9 @@
-package br.com.e2dp.dao;
+package br.com.e2dp.domain.dao;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import br.com.e2dp.domain.Funcionario;
+import br.com.e2dp.domain.model.Funcionario;
 
 public interface FuncionarioDao {
     
