@@ -1,4 +1,4 @@
-package br.com.e2dp.util;
+package br.com.e2dp.web.util;
 
 import java.util.List;
 

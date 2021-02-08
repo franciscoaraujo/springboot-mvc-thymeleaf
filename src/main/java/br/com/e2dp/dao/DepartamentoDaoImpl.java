@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import br.com.e2dp.domain.Departamento;
-import br.com.e2dp.util.PaginacaoUtil;
+import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Repository
 public class DepartamentoDaoImpl extends AbstractDao<Departamento, Long> implements DepartamentoDao {

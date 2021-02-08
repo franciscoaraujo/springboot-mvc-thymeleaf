@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.e2dp.dao.CargoDao;
 import br.com.e2dp.domain.Cargo;
-import br.com.e2dp.util.PaginacaoUtil;
+import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Service @Transactional(readOnly = false)
 public class CargoServiceImpl implements CargoService {

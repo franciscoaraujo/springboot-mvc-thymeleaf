@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import br.com.e2dp.domain.Cargo;
-import br.com.e2dp.util.PaginacaoUtil;
+import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Repository
 public class CargoDaoImpl extends AbstractDao<Cargo, Long> implements CargoDao {

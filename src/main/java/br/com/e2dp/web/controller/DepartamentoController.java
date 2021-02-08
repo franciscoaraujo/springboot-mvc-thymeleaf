@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.e2dp.domain.Departamento;
-import br.com.e2dp.util.PaginacaoUtil;
 import br.com.e2dp.web.service.DepartamentoService;
+import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Controller
 @RequestMapping("/departamentos")

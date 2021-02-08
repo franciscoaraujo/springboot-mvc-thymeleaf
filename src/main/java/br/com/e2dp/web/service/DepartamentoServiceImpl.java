@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.e2dp.dao.DepartamentoDao;
 import br.com.e2dp.domain.Departamento;
-import br.com.e2dp.util.PaginacaoUtil;
+import br.com.e2dp.web.util.PaginacaoUtil;
 
 @Service
 public class DepartamentoServiceImpl implements DepartamentoService {
