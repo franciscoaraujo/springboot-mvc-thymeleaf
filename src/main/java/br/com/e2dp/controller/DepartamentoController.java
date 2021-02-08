@@ -1,5 +1,7 @@
 package br.com.e2dp.controller;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.e2dp.domain.Departamento;
 import br.com.e2dp.service.DepartamentoService;
+import br.com.e2dp.util.PaginacaoUtil;
 
 @Controller
 @RequestMapping("/departamentos")
@@ -28,8 +32,12 @@ public class DepartamentoController {
 	}
 	
 	@GetMapping("/listar")
-	public String listar(ModelMap model) {
-		model.addAttribute("departamentos", service.buscarTodos());
+	public String listar(ModelMap model,  @RequestParam("page") Optional<Integer> page) {
+		int paginaAtual = page.orElse(1);
+		
+		PaginacaoUtil<Departamento>pageDepartamento = service.buscaPorPagina(paginaAtual);
+		
+		model.addAttribute("pageDepartamento", pageDepartamento);
 		return "departamento/lista";
 	}
 	
@@ -70,6 +78,7 @@ public class DepartamentoController {
 			service.excluir(id);
 			model.addAttribute("success", "Departamento removido com sucesso.");
 		}
-		return listar(model);
+		
+		return "departamento/lista";
 	}
 }

@@ -3,6 +3,7 @@ package br.com.e2dp.service;
 import java.util.List;
 
 import br.com.e2dp.domain.Cargo;
+import br.com.e2dp.util.PaginacaoUtil;
 
 public interface CargoService {
 
@@ -17,5 +18,7 @@ public interface CargoService {
 	List<Cargo> buscarTodos();
 
 	boolean cargoTemFuncionarios(Long id);
+	
+	PaginacaoUtil<Cargo> buscarPorPagina(int pagina);
 }
 

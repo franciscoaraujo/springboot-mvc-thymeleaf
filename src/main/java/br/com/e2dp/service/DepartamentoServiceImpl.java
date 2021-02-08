@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.e2dp.dao.DepartamentoDao;
 import br.com.e2dp.domain.Departamento;
+import br.com.e2dp.util.PaginacaoUtil;
 
 @Service
 public class DepartamentoServiceImpl implements DepartamentoService {
@@ -55,11 +56,21 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 		}
 		return true;
 	}
-
+	
+	
+	
 	@Override
 	public boolean departamentoJaCadastrado(String nome) {
 		
 		return false;
 	}
+
+	@Override
+	public PaginacaoUtil<Departamento> buscaPorPagina(int pagina) {
+		return dao.buscaPaginada(pagina);
+	}
+
+
+	
 
 }
