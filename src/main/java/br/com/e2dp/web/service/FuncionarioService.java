@@ -1,4 +1,4 @@
-package br.com.e2dp.service;
+package br.com.e2dp.web.service;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,4 +1,4 @@
-package br.com.e2dp.controller;
+package br.com.e2dp.web.controller;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,9 +23,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.e2dp.domain.Cargo;
 import br.com.e2dp.domain.Funcionario;
 import br.com.e2dp.domain.UF;
-import br.com.e2dp.service.CargoService;
-import br.com.e2dp.service.FuncionarioService;
-import br.com.e2dp.validator.FuncionarioValidator;
+import br.com.e2dp.web.service.CargoService;
+import br.com.e2dp.web.service.FuncionarioService;
+import br.com.e2dp.web.validator.FuncionarioValidator;
 
 @Controller
 @RequestMapping("/funcionarios")

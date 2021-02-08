@@ -1,4 +1,4 @@
-package br.com.e2dp.validator;
+package br.com.e2dp.web.validator;
 
 import java.time.LocalDate;
 

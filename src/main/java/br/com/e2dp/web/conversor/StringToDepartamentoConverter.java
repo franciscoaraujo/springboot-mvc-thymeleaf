@@ -1,24 +1,25 @@
-package br.com.e2dp.conversor;
+package br.com.e2dp.web.conversor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import br.com.e2dp.domain.Cargo;
-import br.com.e2dp.service.CargoService;
+import br.com.e2dp.domain.Departamento;
+import br.com.e2dp.web.service.DepartamentoService;
 
 @Component
-public class StringToCargoConversor implements Converter<String, Cargo> {
-
-	@Autowired
-	private CargoService service;
+public class StringToDepartamentoConverter implements Converter<String, Departamento> {
 	
+	@Autowired
+	private DepartamentoService service;
+
 	@Override
-	public Cargo convert(String text) {
+	public Departamento convert(String text) {
 		if (text.isEmpty()) {
 			return null;
 		}
 		Long id = Long.valueOf(text);
 		return service.buscarPorId(id);
 	}
+
 }
